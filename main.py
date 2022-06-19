@@ -2,6 +2,11 @@ from fritz.typing import EXIT_SUCCESS, Path
 from fritz.api import Router
 import argparse
 import sys
+import requests
+
+def current_ip() -> str:
+    res = requests.get("https://httpbin.org/ip")
+    return res.json().get("origin")
 
 def main(args) -> None:
     if args.reboot:
@@ -10,6 +15,13 @@ def main(args) -> None:
         print(f"Rebooting {connection.modelname}@{router.connector.connection_host}...",)
         connection.reboot()
         print("Get a 🍵 and wait until the router is reachable again.")
+    elif args.reconnect:
+        router = Router(args.config)
+        connection = router.connect()
+        print(f"Current Public IP: {current_ip()}")
+        print(f"Reconnecting...")
+        connection.reconnect()
+        print(f"Current Public IP: {current_ip()}")
     elif args.info:
         router = Router(args.config)
         connection = router.connect()
@@ -43,6 +55,11 @@ if __name__ == "__main__":
     parser.add_argument("--reboot", type=str2bool, nargs='?',
                         const=True, default=False,
                         help="connect and reboot the router")
+
+    parser.add_argument("--reconnect", type=str2bool, nargs='?',
+                        const=True, default=False,
+                        help="connect and reconnect with new IP from ISP")
+
 
     parser.add_argument("--config", type=Path, default="config.yml",
                         help="path to the configuration file")
