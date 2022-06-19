@@ -1,0 +1,14 @@
+*
+!*/
+!*.*
+*~
+[._]*.sw[a-p]
+__pycache__/
+.netrwhist
+.DS_Store
+tags
+out
+!LICENSE
+!README
+config.yml
+venv/

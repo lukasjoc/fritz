@@ -1,0 +1,17 @@
+---
+# Config File to cunstomize cli tool
+
+# hostname or ip of the router
+host: "REPLACE_WITH_HOST"
+
+# Default TCP Port, for TLS use 49443
+# port: 49000
+
+# use TLS
+# use_tls: false
+
+# the user of the box
+user: "REPLACE_WITH_USERNAME"
+
+# password
+password: "REPLACE_WITH_PASSWORD"
