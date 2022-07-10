@@ -1,3 +1,16 @@
 fritz
 
 FRITZ!Box (Simple) Interface
+
+Installation Guide:
+---
+
+git clone https://github.com/lukasjoc/fritz
+cd fritz/
+python -m venv venv
+source venv/bin/activate
+pip install -r requirements.txt
+cp config.yml.sample  config.yml
+vim config.yml # Update config with User, Password
+python main.py  --version
+
