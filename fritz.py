@@ -1,7 +1,6 @@
 import argparse
 import sys
 import requests
-from fritz.api import Router
 from fritzconnection import FritzConnection
 from yaml import load as yamlload, FullLoader as yamlFullLoader
 
