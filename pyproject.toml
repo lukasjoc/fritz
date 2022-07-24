@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "fritz"
-version = "0.1.0"
+version = "0.2.0"
 description = "FRITZ!Box (Simple) Interface"
 authors = ["lukasjoc <jochamlu@gmail.com>"]
 license = "MIT"
