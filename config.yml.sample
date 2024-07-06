@@ -1,0 +1,11 @@
+---
+# Location: .config/fritz/config.yml
+
+# the host basically the gateway ip
+host: "http://000.000.000.000"
+
+# a valid user name (extra user recommended)
+username: "*****"
+
+# the password of that user
+password: "*****"
